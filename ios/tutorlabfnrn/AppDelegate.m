@@ -1,3 +1,4 @@
+#import <Firebase.h>
 #import "AppDelegate.h"
 
 #import <React/RCTBridge.h>
@@ -36,6 +37,9 @@ static void InitializeFlipper(UIApplication *application) {
                                                    moduleName:@"tutorlabfnrn"
                                             initialProperties:nil];
 
+  if ([FIRApp defaultApp] == nil) {
+     [FIRApp configure];
+   }
   if (@available(iOS 13.0, *)) {
       rootView.backgroundColor = [UIColor systemBackgroundColor];
   } else {
